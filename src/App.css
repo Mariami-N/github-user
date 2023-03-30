@@ -1,38 +1,134 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Nunito+Sans&family=Outfit&family=Overpass&family=Poppins&family=Space+Grotesk&family=Space+Mono&display=swap');
+#root{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container{
+  width: 1440px;
+  height: 900px;
+  background-color: #F2F2F2;
+  margin: 0 auto;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  flex-direction: column;
 }
-
-.App-link {
-  color: #61dafb;
+header{
+  width: 730px;
+  height: 69px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-content: space-between;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.moon{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-content: space-between;
+  
+}
+svg path:hover{
+  cursor: pointer;
+  fill: black;
+}
+h1{
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 39px;
+  color: #222731;
+}
+h6{
+  margin-right: 16px;
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 19px;
+  text-align: right;
+  letter-spacing: 2.5px;
+  color: #697C9A;
+}
+h6:hover{
+  color: black;
+  cursor: pointer;
+}
+h6{
+  display: inline-block;
+}
+.search{
+  width: 730px;
+  height: 69px;
+  background-color: #FEFEFE;
+  border-radius: 15px;
+  margin-top: 36px;
+  box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  align-content: space-around;
+}
+.search:hover{
+  cursor: pointer;
+}
+.searchimg{
+  margin-left: 32px;
+  margin-right: 26px;
+}
+input{
+  outline: none;
+  border: none;
+  width: 290px;
+  height: 25px;
+  margin-right: 90px;
+}
+input::placeholder{
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  color: #4B6A9B;
+  margin-left: 40px;
+}
+.noresult{
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 22px;
+  color: #F74646;
+}
+button{
+  width: 106px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: #0079FF;
+  margin-left: 10px;
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: #FFFFFF;
+  border: none;
+}
+button:hover{
+  cursor: pointer;
+  background-color: #60ABFF;
+}
+.box{
+  width: 730px;
+  height: 420px;
+  border-radius: 15px;
+  background: #FEFEFE;
+  box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
+  margin-top: 24px;
+}
+.title{
+  background-color: #697C9A;
+  display: inline-block;
 }
