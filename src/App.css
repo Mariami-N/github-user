@@ -129,6 +129,89 @@ button:hover{
   margin-top: 24px;
 }
 .title{
-  background-color: #697C9A;
   display: inline-block;
 }
+/* .cat{
+  border-radius: 50%; 
+  
+} */
+.header2{
+  display: flex;
+  justify-content: space-around;
+  align-content: space-around;
+  margin-top: 30px;
+}
+.followers{
+  width: 480px;
+  height: 85px;
+  background-color: #F6F8FF;
+  border-radius: 10px;
+  margin-left: 202px;
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: space-around;
+}
+.buttom{
+  width: 480px;
+  height: 85px;
+  margin-left: 202px;
+  display: grid;
+  grid-template-columns: auto auto;
+  margin-top: 20px;
+}
+p{
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 22px;
+  color: #4B6A9B;
+}
+p:hover{
+  cursor: pointer;
+}
+.number{
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 33px;
+  text-transform: uppercase;
+  color: #2B3442;
+  margin-top: 1px;
+}
+.foll{
+ display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 72px;
+  height: 85px;
+}
+.avatar{
+  width: 117px;
+  height: 117px;
+  border-radius: 50%;
+}
+.dark{
+  background-color: #202C36;
+  color: white;
+}
+
+.dark h1,
+.dark h6,
+.dark .search,
+.dark input,
+.dark ::placeholder,
+.dark .box,
+.dark p,
+.dark .followers
+.dark .number
+{
+  background-color: #2B3844;
+  color: inherit;
+}
+
+
+
+
