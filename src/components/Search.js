@@ -1,5 +1,5 @@
 import photo from '../images/Shape 2.png';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import imageloc from '../images/Shape (2).png'
 import imageli from '../images/002-url.svg'
@@ -8,33 +8,53 @@ import imagehome from '../images/home.svg'
 
 
 export default function Search (){
-    // const [cat, setcat] = useState ()
-    const [username, setUsername] = useState('');
+    const [username, setUsername] = useState('octocat');
     const [userData, setUserData] = useState('');
     const [error, setError] = useState('');
+    const [searchInputValue, setSearchInputValue ] = useState ('');
+    
+      
+        useEffect(() => {
+          axios.get(`https://api.github.com/users/${username}`)
+            .then(response => {
+              console.log(response.data);
+              setUserData(response.data);
+              setError("")
+            })
+            .catch(error => {
+              setError("No Result");
+            });
+        }, [username]);
+      
 
-    function search() {
-        axios.get(`https://api.github.com/users/${username}`)
-          .then(response => {
-        console.log(response.data);
-            setUserData(response.data);
-          })
-          .catch(error => {
-            setError("No Result");
-            setUserData('');
-          });
-      }
       function handleInputChange(event) {
-        setUsername(event.target.value);
-        console.log (event.target.value)
+        setSearchInputValue(event.target.value);
       }
+
+
+      function handleClick(){
+        setUsername(searchInputValue)
+      }
+
+      const formatDate = (dateString) => {
+        const date = new Date(dateString);
+        const options = {
+          day: 'numeric',
+          month: 'short',
+          year: 'numeric'
+        };
+        const formattedDate = date.toLocaleDateString('en-US', options);
+        return `joined ${formattedDate}`;
+    };
+
+
     return (
         <>
         <div className="search">
             <img className='searchimg' src={photo} alt="search"/>
-            <input type="text" value={username} onChange={handleInputChange} placeholder="Enter a GitHub username" />
+            <input type="text" value={searchInputValue} onChange={handleInputChange} placeholder="Enter a GitHub username" />
             {error && <p className='noresult'>{error}</p>}
-            <button onClick={search}>Search</button>
+            <button onClick={handleClick}>Search</button>
         </div>
         <div className="box">
             <div className='header2'>
@@ -47,14 +67,14 @@ export default function Search (){
                 <p>{userData.bio}</p>
             </div>
             <div>
-                <p>Joined:{userData.created_at}</p>
+                <p>Joined: {formatDate(userData.created_at)}</p>
        
             </div>
         </div>
         <div className='followers'>
                 <div className='foll'>
                    <p>Repos:</p> 
-                    <p className='number'>{userData.repos}</p>
+                    <p className='number'>{userData.public_repos}</p>
                 </div>
                 <div className='foll'>
                     <p>Followers:</p>
@@ -67,17 +87,32 @@ export default function Search (){
                 </div>
         </div>
         <div className='buttom'>
-            <div>
-                <p> <img src={imageloc} alt='locat'/> {userData.location}</p> 
-                <p> <img src={imageli} alt='link'/> https://github.blog</p>
+            <div className='first'>
+                <div className='twittt'>
+                    <img src={imageloc} alt='locat'/>
+                    <p>  {userData.location ?  userData.location : "Not Available"}</p>
+                </div> 
+                <div className='twittt'>
+                    <img src={imageli} alt='link'/>
+                    <p>  {userData.blog ?  userData.blog : "Not Available"} </p>
+                </div>
             </div>
-            <div>
-                <p> <img src={imagetwit} alt='twit'/>{userData.twitter_username
-}</p>
-                <p> <img src={imagehome} alt=''/> @github</p>
+            <div className='first'> 
+                <div className='twittt'>
+                    <img src={imagetwit} alt='twit'/>
+                    <p>{userData.twitter_username ?  userData.twitter_username : "Not Available"}</p>
+                </div>
+
+                <div className='twittt'>
+                    <img src={imagehome} alt=''/>
+                    <p>{userData.company ?  userData.company : "Not Available"}</p>
+                </div>
             </div>
          </div> 
         </div>
         </>
     )
 }
+
+
+// <img src={imagetwit} alt='twit'/> 

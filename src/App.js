@@ -5,17 +5,16 @@ import { useState } from 'react';
 function App() {
   const [darkMode, setDarkMode] = useState(false);
  
-
-
-
   const toggleDarkMode  = () => {
     setDarkMode(!darkMode);
   }
 
   return (
     <>
-    <div className={`container ${darkMode ? 'dark' : '' }`}
-    style={{backgroundColor: '#F2F2F2' }}
+    <div 
+    style={{bgcolor: '#F2F2F2' }}
+    className={`container ${darkMode ? 'dark' : '' }`}
+    
     >
       <header>
         <h1>devfinder</h1>

@@ -131,10 +131,6 @@ button:hover{
 .title{
   display: inline-block;
 }
-/* .cat{
-  border-radius: 50%; 
-  
-} */
 .header2{
   display: flex;
   justify-content: space-around;
@@ -158,6 +154,7 @@ button:hover{
   margin-left: 202px;
   display: grid;
   grid-template-columns: auto auto;
+  align-items: start;
   margin-top: 20px;
 }
 p{
@@ -199,18 +196,24 @@ p:hover{
 }
 
 .dark h1,
-.dark h6,
 .dark .search,
 .dark input,
 .dark ::placeholder,
 .dark .box,
+.dark .foll,
 .dark p,
 .dark .followers
-.dark .number
+
 {
   background-color: #2B3844;
   color: inherit;
 }
+.twittt{
+display: flex;
+justify-content: space-around;
+align-items: center;
+}
+
 
 
 
