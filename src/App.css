@@ -5,8 +5,8 @@
   box-sizing: border-box;
 }
 .container{
-  width: 1440px;
-  height: 900px;
+  width: 100vw;
+  height: 100vh;
   background-color: #F2F2F2;
   margin: 0 auto;
   display: flex;
@@ -81,7 +81,7 @@ h6{
 input{
   outline: none;
   border: none;
-  width: 290px;
+  width: 300px;
   height: 25px;
   margin-right: 90px;
 }
@@ -195,7 +195,7 @@ p:hover{
   color: white;
 }
 
-.dark h1,
+
 .dark .search,
 .dark input,
 .dark ::placeholder,
@@ -207,6 +207,11 @@ p:hover{
 {
   background-color: #2B3844;
   color: inherit;
+}
+
+.dark  h1,
+.dark h6{
+color: white;
 }
 .twittt{
 display: flex;

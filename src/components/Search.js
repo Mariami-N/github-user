@@ -31,7 +31,6 @@ export default function Search (){
         setSearchInputValue(event.target.value);
       }
 
-
       function handleClick(){
         setUsername(searchInputValue)
       }
@@ -46,7 +45,6 @@ export default function Search (){
         const formattedDate = date.toLocaleDateString('en-US', options);
         return `joined ${formattedDate}`;
     };
-
 
     return (
         <>
